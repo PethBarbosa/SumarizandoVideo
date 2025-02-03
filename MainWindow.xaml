@@ -1,0 +1,69 @@
+﻿<Window x:Class="SumarizandoVideo.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SumarizandoVideo"
+        mc:Ignorable="d"
+        Title="Sumarizando Video" Height="500" Width="838"
+        Icon="favicon.ico">
+    
+    <!-- Definindo o background com a imagem -->
+    <Window.Background>
+        <ImageBrush ImageSource="backGround_video.jpg" />
+    </Window.Background>
+
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" Background="#7fFFfff7" Margin="10,30,10,20" HorizontalAlignment="Center">
+        <StackPanel x:Name="MainPane" Orientation="Vertical" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="1,20">
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Height="24">
+
+                <Button x:Name="myButton" 
+                    Click="OpenFilePicker_Click" 
+                    Content="Carregar" 
+                    Margin="5,0" Width="62"
+                        />
+
+                <TextBox x:Name="textBoxFile"  
+                     Width="300" 
+                     IsReadOnly="True"
+                     Background="Azure"/>
+
+
+                <TextBlock Background="AliceBlue" Margin="5" Height="20" FontWeight="Bold"> Caminho/Pasta para salvar:</TextBlock>
+
+                <TextBox x:Name="textBoxFileSave" 
+                     Width="254" 
+                     Background="Azure" 
+                         Margin="0,0,20,0"/>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="1,20">
+                <Button x:Name="Processar" 
+                    Content="Gerar clips ..." 
+                    Margin="5,0" 
+                    Width="200"
+                    Click="ProcessInput_Click" 
+                    HorizontalAlignment="Center"/>
+                
+                <Button x:Name="addVideo" 
+                    Click="AddVideo_Click" 
+                    Content=" + " 
+                    Background="Green"
+                    Width="40" Height="28"/>
+                
+                <Button x:Name="removeVideo"  
+                    Content=" - " 
+                    Background="red" 
+                    Margin="5,0" Height="29" Width="40" />
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+                <TextBox Width="150" Text="Tempo inicial" HorizontalContentAlignment="Center" Background="Azure" />
+                <TextBox Width="150" Text="Tempo final" HorizontalContentAlignment="Center" Background="Azure"/>
+                <TextBox Width="400" Text="Título" HorizontalContentAlignment="Center" Background="Azure"/>
+            </StackPanel>
+        </StackPanel>
+    </ScrollViewer>
+</Window>
